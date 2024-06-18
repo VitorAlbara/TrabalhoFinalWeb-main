@@ -1,0 +1,77 @@
+#logosuperior img {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+#logosuperior:hover img {
+    transform: scale(1.3) rotate(5deg);
+}
+
+#navbarsuperior {
+    background: linear-gradient(0deg, rgba(255, 0, 0, 0.411) 0%, rgba(0, 0, 0, 0) 40%);
+    color: white;
+}
+
+body {
+    padding: 20px;
+    margin: 0;
+    background-image: url(Imagens/background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+#produto-detalhe {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#produto-detalhe img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card-title,
+.card-text {
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: rgba(255, 0, 0, 0.8);
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.col {
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+h3 {
+    margin-bottom: 20px; 
+    color: #ffffff; 
+}
+
+.btn-info {
+    background-color: rgba(0, 123, 255, 0.8); 
+    border: none; 
+    margin: 5px; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+    text-decoration: none; 
+    color: #ffffff; 
+}
+
+.btn-info:hover {
+    background-color: rgba(0, 123, 255, 1); 
+}
