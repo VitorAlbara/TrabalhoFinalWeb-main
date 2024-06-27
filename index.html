@@ -20,12 +20,12 @@
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
     <title>Albara veiculos</title>
 </head>
 
-<body>
-
+<body>           
     <div class="container md-4" id="logo">
         <div class="row justify-content-center">
             <img src="Imagens/image.psd.png" style="width:300px;height:auto;" id="logosuperior">
@@ -35,20 +35,46 @@
     <div class="Container mb-4 justify-content-center text-center">
         <div class="row justify-content-center" id="navbarsuperior">
             <div class="col">
-                <nav class="navbar navbar-expand-lg ">
-                    <a class="navbar-brand" href="#">Albara Veiculos</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                        aria-label="Alterna navegação">
-                        <span class="btn btn-danger"></span>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#">Albara Veículos</a>
+                
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarDropdown"
+                        aria-controls="navbarDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-item nav-link" href="#destaques">Destaques</a>
-                            <a class="nav-item nav-link" href="#produtos">Preços</a>
-                            <a class="nav-item nav-link" href="#quem-somos">Quem Somos</a>
-                            <a class="nav-item nav-link" href="#fale-conosco">Contato</a>
-                        </div>
+        
+                    <div class="collapse navbar-collapse" id="navbarDropdown">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#destaques">Destaques</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#produtos">Preços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="TelaDeManutencao.html">Manuteção Preventiva</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#quem-somos">Quem Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#fale-conosco">Contato</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    Carrinho de Compras
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="#" onclick="limparCarrinho()">Limpar Carrinho</a>
+                                    <div class="dropdown-divider"></div>
+                                    <h6 class="dropdown-header">Itens no Carrinho:</h6>
+                                    <div id="lista-carrinho-dropdown"></div>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Total: R$ <span id="total-carrinho-dropdown">0.00</span></a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
             </div>
@@ -84,7 +110,7 @@
                 <div class="carousel-item">
                     <div class="row justify-content-center">
                         <div class="col-auto">
-                            <img class="d-block w-5" src="Imagens/saveiro1.jpg" alt="Terceiro Slide"
+                            <img class="d-block w-5" src="Imagens/saveiroCross.jpg" alt="Terceiro Slide"
                                 style="width:960;height:540;">
                         </div>
                     </div>
@@ -117,6 +143,8 @@
                         <p class="card-text text-light">Valor Avista: R$102.900</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoCruze.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: 'Cruze LTZ 2018 1.4 Turbo', preco: 102900 })">Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -128,17 +156,19 @@
                         <p class="card-text text-light">Valor Avista: R$43.500</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoGol.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: 'Vw Gol 1.0 kit Trendline', preco: 43500 })" >Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
             <div class="col-md-3" id="Produto3">
                 <div class="card">
-                    <img class="card-img-top" src="Imagens/saveiro1.jpg" alt="Imagem de capa do card">
+                    <img class="card-img-top" src="Imagens/saveiroCross.jpg" alt="Imagem de capa do card">
                     <div class="card-body">
                         <h5 class="card-title text-light">2017 Volkswagen saveiro cross</h5>
                         <p class="card-text text-light">Valor Avista: R$87.900</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoSaveiro.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: '2017 Volkswagen saveiro cross', preco: 87900 })">Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -150,6 +180,7 @@
                         <p class="card-text text-light">Valor Avista: R$ 109.900</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoCivic.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: '2017 Honda civic', preco: 109900 })">Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -163,6 +194,7 @@
                         <p class="card-text text-light">Valor Avista: R$99.990</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoPolo.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: '2020 Volkswagen polo', preco: 99990 })">Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -174,6 +206,7 @@
                         <p class="card-text text-light">Valor Avista: R$125.773</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoPoloGts.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: 'POLO GTS ANO 2021 1.4 TSI', preco: 125773 })">Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -185,6 +218,7 @@
                         <p class="card-text text-light">Valor Avista: R$ 109.900</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoJetta.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: '2016 Volkswagen jetta highline', preco: 109900 })">Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -196,6 +230,7 @@
                         <p class="card-text text-light">Valor Avista: R$42.900</p>
                         <a href="comprar.html" class="btn btn-primary">Comprar</a>
                         <a href="InfoOnix.html" class="btn btn-primary">Saber Mais</a>
+                        <a class="btn btn-primary" onclick="adicionarAoCarrinho({ nome: '2014 Chevrolet onix', preco: 42900 })">Adicionar ao Carrinho<i class="las la-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
@@ -296,6 +331,8 @@
             <h5>Created By Vitor Albara</h5>
         </footer>
     </div>
+
+    <script src="carrinho.js"></script>
 
 </body>
 
